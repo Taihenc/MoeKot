@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoeKot</string>
+    <string name="main_content_header_string">MoeKolin</string>
+    <string name="moe_type">Moe Type</string>
 </resources>

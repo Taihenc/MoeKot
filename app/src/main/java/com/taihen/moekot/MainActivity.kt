@@ -10,37 +10,29 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.taihen.moekot.model.MoeItem
 import com.taihen.moekot.ui.theme.MoeKotTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            MoeKotTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.main_activity)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        val recyclerView: RecyclerView = findViewById(R.id.main_recycler)
+        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = layoutManager
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MoeKotTheme {
-        Greeting("Android")
+        val moeItems = listOf<MoeItem>(
+            MoeItem(R.drawable.chainsaw, "Chainsaw Man"),
+            MoeItem(R.drawable.jujutsu, "Jujutsu Kaisen"),
+            MoeItem(R.drawable.oshino, "Oshi no Ko"),
+            MoeItem(R.drawable.yofukashi, "Yofukashi no Uta"),
+        )
+
+        println("moeItems: $moeItems")
+        val adapter = MoeAdapter(moeItems)
+        recyclerView.adapter = adapter
     }
 }
