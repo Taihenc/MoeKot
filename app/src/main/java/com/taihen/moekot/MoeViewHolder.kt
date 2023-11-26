@@ -16,7 +16,6 @@ class MoeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         titleTextView.text = moeItem.title
         subTitleTextView.text = moeItem.title
     }
-
     fun setItemHeight(height: Int) {
         val layoutParams = itemView.layoutParams
         layoutParams.height = height
