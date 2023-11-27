@@ -2,4 +2,11 @@
     <string name="app_name">MoeKot</string>
     <string name="main_content_header_string">MoeKolin</string>
     <string name="moe_type">Moe Type</string>
+    <string name="moe_backdrop">moe_backdrop</string>
+    <string name="moe_detail_cover">moe_detail_cover</string>
+    <string name="moe_detail_title">moe_detail_title</string>
+    <string name="moe_detail_author">moe_detail_author</string>
+    <string name="moe_detail_status">moe_detail_status</string>
+    <string name="more">MORE</string>
+    <string name="sample_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam faucibus pretium mi. Curabitur sed augue turpis. Nulla convallis cursus erat vel volutpat. Aenean eget nunc quam. Etiam porttitor turpis nunc, in rhoncus nisi aliquet in. Etiam a purus sit amet ligula venenatis congue. Sed maximus mattis metus, non varius massa tincidunt ac. Sed fermentum dolor faucibus, consectetur velit vitae, euismod lorem. Donec velit felis, blandit ut lectus sit amet, porta lobortis eros. Etiam maximus elementum felis, quis congue ante imperdiet ac. Duis maximus interdum gravida. Morbi interdum lacus orci, in viverra libero feugiat vel. Mauris ac magna et turpis molestie porta. Vestibulum in lobortis nisi.</string>
 </resources>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manga_detail_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black"
+    android:theme="@style/AppTheme">
+
+    <View
+        android:id="@+id/true_backdrop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="220dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:background="@color/light_black" />
+
+    <ImageView
+        android:id="@+id/backdrop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:contentDescription="@string/moe_backdrop"
+        android:scaleType="centerCrop"
+        android:src="@drawable/preview_backdrop_yofukashi"
+        app:layout_constraintBottom_toBottomOf="@+id/true_backdrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/true_backdrop"
+        tools:alpha="1"
+        tools:layout_width="match_parent"
+        tools:src="@drawable/preview_backdrop_yofukashi" />
+
+    <View
+        android:id="@+id/backdrop_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/gradient_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/true_backdrop" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backdrop_gradient" />
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@id/cover_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cover_card"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_view"
+        app:strokeWidth="1dp">
+
+        <ImageView
+            android:id="@+id/moe_cover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/moe_detail_cover"
+            android:maxHeight="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/preview_yofukashi"
+            tools:src="@drawable/preview_yofukashi" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:textColor="@color/white"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/cover_card"
+        app:layout_constraintTop_toTopOf="@id/cover_card"
+        tools:text="Title Example" />
+
+    <TextView
+        android:id="@+id/moe_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.7"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:textIsSelectable="false"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:text="moe_author" />
+
+    <TextView
+        android:id="@+id/moe_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.7"
+        android:textColor="@color/white"
+        android:textIsSelectable="false"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@+id/moe_author"
+        tools:text="moe_detail_status" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/moe_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.7"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:textIsSelectable="false"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/moe_status"
+        tools:text="type: Manga" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bottom_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:orientation="horizontal"
+        app:barrierDirection="bottom" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/moe_summary_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="About this manga"
+        android:textColor="@color/white"
+        android:textIsSelectable="false"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cover_card"
+        app:layout_constraintHorizontal_bias="0.15"
+        tools:text="About this manga" />
+
+    <TextView
+        android:id="@+id/moe_summary"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:maxLines="3"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/moe_genres_tags"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/moe_summary_label"
+        app:layout_constraintVertical_bias="0.0"
+        tools:maxLines="10"
+        tools:text="@string/sample_text" />
+
+    <View
+        android:id="@+id/more_bg_gradient"
+        android:layout_width="60dp"
+        android:layout_height="16sp"
+        android:background="@drawable/full_gradient"
+        android:backgroundTint="@color/light_black"
+        app:layout_constraintBottom_toBottomOf="@id/moe_summary"
+        app:layout_constraintEnd_toEndOf="@id/more_end_guide" />
+
+    <View
+        android:id="@+id/more_end_guide"
+        android:layout_width="24dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/more_button"
+        app:layout_constraintStart_toStartOf="@+id/more_button"
+        app:layout_constraintTop_toTopOf="@id/more_button" />
+
+    <View
+        android:id="@+id/more_bg_solid"
+        android:layout_width="0dp"
+        android:layout_height="16sp"
+        android:background="@color/light_black"
+        app:layout_constraintBottom_toBottomOf="@id/moe_summary"
+        app:layout_constraintEnd_toEndOf="@id/more_button"
+        app:layout_constraintStart_toStartOf="@id/more_button" />
+
+    <View
+        android:id="@+id/more_guide"
+        android:layout_width="1dp"
+        android:layout_height="15sp"
+        app:layout_constraintEnd_toEndOf="@id/moe_summary"
+        app:layout_constraintTop_toBottomOf="@id/moe_summary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/more_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:background="@android:color/transparent"
+        android:drawableEnd="@drawable/ic_expand_more"
+        android:drawableTint="@color/light_blue"
+        android:minWidth="0dp"
+        android:paddingStart="10dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/more"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/more_guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@null" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/more_button_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="more_button,more_bg_gradient,more_bg_solid" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/sub_item_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/moe_genres_tags"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:chipSpacingVertical="-12dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/more_button"
+        tools:layout_height="100dp">
+
+        <com.google.android.material.chip.Chip
+            style="@style/chip_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manga"
+            android:textColor="@color/red" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
