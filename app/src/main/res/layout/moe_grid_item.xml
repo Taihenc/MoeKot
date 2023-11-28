@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
-    tools:background="@color/light_black"
+    tools:background="@color/background"
     tools:layout_width="150dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,13 +42,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:alpha="0.5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    tools:ignore="ContentDescription"
                     app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="ContentDescription"
                     tools:src="@mipmap/ic_launcher" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -93,26 +92,24 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/moe_title"
-                style="?textAppearanceBodySmall"
+                style="@style/textBodyPrimary"
+                android:textColor="@color/textColorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 app:lineHeight="15sp"
                 android:maxLines="2"
-                android:textColor="@color/white"
                 app:layout_constraintBottom_toTopOf="@+id/subtitle"
                 tools:text="Sample name" />
 
             <TextView
                 android:id="@+id/moe_sub_title"
-                style="?textAppearanceBodySmall"
+                style="@style/textBodySecondary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_marginTop="-1dp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:alpha="0.5"
                 tools:text="Sample artist" />
         </LinearLayout>
 
