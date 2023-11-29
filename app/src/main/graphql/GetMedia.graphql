@@ -1,0 +1,33 @@
+query GetMoeData($type: MediaType, $page: Int, $perPage: Int, $staff_sort: [StaffSort]) {
+    trending: Page(page: $page, perPage: $perPage) {
+        media(sort: TRENDING_DESC, type: $type, isAdult: false) {
+            ...MediaFragment
+        }
+    }
+}
+
+fragment MediaFragment on Media {
+    id
+    title {
+        userPreferred
+    }
+    coverImage {
+        extraLarge
+        large
+        color
+    }
+    bannerImage
+    description
+    type
+    status(version: 2)
+    genres
+    averageScore
+    staff(sort: $staff_sort) {
+        nodes {
+            name {
+                userPreferred
+            }
+            primaryOccupations
+        }
+    }
+}

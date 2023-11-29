@@ -1,3 +1,5 @@
+package com.taihen.moekot.util
+
 import android.content.res.Resources
 
 val Int.dpToPx: Int

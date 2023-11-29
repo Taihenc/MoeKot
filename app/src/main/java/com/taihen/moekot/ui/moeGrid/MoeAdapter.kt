@@ -1,16 +1,15 @@
-package com.taihen.moekot
+package com.taihen.moekot.ui.moeGrid
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.taihen.moekot.R
 import com.taihen.moekot.model.MoeItem
-import dpToPx
 
-class MoeAdapter(private val moeItems: List<MoeItem>) : RecyclerView.Adapter<MoeViewHolder>() {
+class MoeAdapter(private var moeItems: List<MoeItem>) : RecyclerView.Adapter<MoeViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoeViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.moe_grid_item, parent, false)
-//        view.setH = 270.dpToPx
-        println("view: $view")
         return MoeViewHolder(view)
     }
 
@@ -18,5 +17,11 @@ class MoeAdapter(private val moeItems: List<MoeItem>) : RecyclerView.Adapter<Moe
         holder.bind(moeItems[position])
     }
 
+    fun updateData(newMoeList: List<MoeItem>) {
+        moeItems = newMoeList
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int = moeItems.size
 }
+
