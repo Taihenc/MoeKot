@@ -13,23 +13,12 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class MoeViewModel @Inject constructor(
-    private val anilistClient: AnilistClient
-) : ViewModel() {
-
+class MoeViewModel: ViewModel() {
     private val _moeItemList = MutableLiveData<List<MoeItem>>()
     val moeItemList: LiveData<List<MoeItem>> get() = _moeItemList
 
-    fun fetchMoeItems() {
-        viewModelScope.launch {
-            try {
-                val mediaList = anilistClient.getPopularMedia(MediaType.ANIME, 1, 50)
-                val moeList = mediaList.map { media -> media.toMoeItem() }
-                _moeItemList.value = moeList
-            } catch (e: ApolloException) {
-                e.printStackTrace()
-            }
-        }
+    fun updateMoeList(newList: List<MoeItem>) {
+        _moeItemList.value = newList
     }
 }
+

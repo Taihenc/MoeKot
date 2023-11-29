@@ -26,11 +26,5 @@ object AppModule {
     fun provideAnilistClient(apolloClient: ApolloClient): AnilistClient {
         return ApolloAnilistClient(apolloClient)
     }
-
-    @Provides
-    @Singleton
-    fun provideMoeViewModel(anilistClient: AnilistClient): MoeViewModel {
-        return MoeViewModel(anilistClient)
-    }
 }
 

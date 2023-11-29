@@ -1,0 +1,23 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moeGridFragment">
+
+
+    <fragment
+        android:id="@+id/moeDetailFragment"
+        android:name="com.taihen.moekot.ui.moeDetail.MoeDetailFragment"
+        android:label="MoeDetailFragment" />
+    <fragment
+        android:id="@+id/moeGridFragment"
+        android:name="com.taihen.moekot.ui.moeGrid.MoeGridFragment"
+        android:label="MoeGridFragment" >
+        <action
+            android:id="@+id/action_moeGridFragment_to_moeDetailFragment"
+            app:destination="@id/moeDetailFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.taihen.moekot.MainActivity"
+        android:label="MainActivity" />
+</navigation>
