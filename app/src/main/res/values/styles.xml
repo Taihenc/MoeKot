@@ -14,10 +14,12 @@
     </style>
 
     <style name="textBodyPrimary" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/textColorSecondary</item>
     </style>
 
     <style name="textBodySecondary" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/textColorSecondary</item>
     </style>
 </resources>

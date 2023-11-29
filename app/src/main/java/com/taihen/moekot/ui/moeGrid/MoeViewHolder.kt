@@ -30,7 +30,14 @@ class MoeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             })
         }
         titleTextView.text = moeItem.title
-        subTitleTextView.text = moeItem.title
+        subTitleTextView.text = moeItem.author
+        titleTextView.post {
+            if(titleTextView.lineCount > 1) {
+                subTitleTextView.visibility = View.GONE
+            } else {
+                subTitleTextView.visibility = View.VISIBLE
+            }
+        }
     }
     fun setItemHeight(height: Int) {
         val layoutParams = itemView.layoutParams

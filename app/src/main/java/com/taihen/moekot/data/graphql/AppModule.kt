@@ -1,7 +1,7 @@
 package com.taihen.moekot.data.graphql
 
 import com.apollographql.apollo3.ApolloClient
-import com.taihen.moekot.MoeViewModel
+import com.taihen.moekot.ui.moeGrid.MoeViewModel
 import com.taihen.moekot.model.AnilistClient
 import dagger.Module
 import dagger.Provides

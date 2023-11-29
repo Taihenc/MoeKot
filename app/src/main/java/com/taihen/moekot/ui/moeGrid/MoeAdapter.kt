@@ -15,6 +15,9 @@ class MoeAdapter(private var moeItems: List<MoeItem>) : RecyclerView.Adapter<Moe
 
     override fun onBindViewHolder(holder: MoeViewHolder, position: Int) {
         holder.bind(moeItems[position])
+        holder.itemView.setOnClickListener {
+            println(it)
+        }
     }
 
     fun updateData(newMoeList: List<MoeItem>) {

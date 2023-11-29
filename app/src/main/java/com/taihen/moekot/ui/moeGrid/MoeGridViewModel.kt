@@ -1,6 +1,5 @@
-package com.taihen.moekot
+package com.taihen.moekot.ui.moeGrid
 
-import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

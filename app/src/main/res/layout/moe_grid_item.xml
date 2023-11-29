@@ -58,7 +58,7 @@
                 android:layout_gravity="end"
                 android:clickable="true"
                 android:focusable="true"
-                android:visibility="gone"
+                android:visibility="visible"
                 tools:visibility="visible">
 
                 <ImageView

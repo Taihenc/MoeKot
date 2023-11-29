@@ -1,22 +1,12 @@
 package com.taihen.moekot
 
-import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.anilist.graphql.GetMoeDataQuery
-import com.anilist.graphql.type.MediaType
-import com.apollographql.apollo3.ApolloClient
-import com.apollographql.apollo3.api.Optional
-import com.apollographql.apollo3.exception.ApolloException
-import com.taihen.moekot.data.graphql.toMoeItem
-import com.taihen.moekot.model.AnilistClient
 import com.taihen.moekot.ui.moeGrid.MoeAdapter
-import com.taihen.moekot.model.MoeItem
+import com.taihen.moekot.ui.moeGrid.MoeViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
