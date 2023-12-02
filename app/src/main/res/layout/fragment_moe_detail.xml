@@ -138,37 +138,37 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/moe_description_container">
         <com.google.android.material.chip.Chip
-            style="@style/Moe.Chip.Genre"
+            style="@style/MoeChipGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_width="wrap_content"
             tools:text="Shounen" />
         <com.google.android.material.chip.Chip
-            style="@style/Moe.Chip.Genre"
+            style="@style/MoeChipGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_width="wrap_content"
             tools:text="Comedy" />
         <com.google.android.material.chip.Chip
-            style="@style/Moe.Chip.Genre"
+            style="@style/MoeChipGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_width="wrap_content"
             tools:text="Romance" />
         <com.google.android.material.chip.Chip
-            style="@style/Moe.Chip.Genre"
+            style="@style/MoeChipGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_width="wrap_content"
             tools:text="Romance" />
         <com.google.android.material.chip.Chip
-            style="@style/Moe.Chip.Genre"
+            style="@style/MoeChipGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_width="wrap_content"
             tools:text="Romance" />
         <com.google.android.material.chip.Chip
-            style="@style/Moe.Chip.Genre"
+            style="@style/MoeChipGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_width="wrap_content"

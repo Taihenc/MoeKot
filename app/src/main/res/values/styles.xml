@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Moe.Chip.Genre" parent="Widget.Material3.Chip.Suggestion.Elevated">
-        <item name="chipBackgroundColor">@color/colorSecondary</item>
+    <style name="MoeChipGenre" parent="Widget.Material3.Chip.Suggestion.Elevated">
+        <item name="chipBackgroundColor">@color/colorAccent</item>
         <item name="chipMinHeight">20dp</item>
         <item name="chipMinTouchTargetSize">0dp</item>
-        <item name="chipCornerRadius">10dp</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+        <item name="chipCornerRadius">6dp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/colorOnSurface</item>
-        <item name="android:textAppearance">@style/TextAppearance.Material3.BodySmall</item>
+        <item name="android:textAppearance">@style/textBodyPrimary</item>
         <item name="chipStrokeWidth">0dp</item>
-        <item name="android:layout_marginTop">4dp</item>
         <item name="android:checkable">true</item>
     </style>
 
-    <style name="textAppearanceTitle" parent="TextAppearance.MaterialComponents.Headline1">
+    <style name="textAppearanceTitle" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 

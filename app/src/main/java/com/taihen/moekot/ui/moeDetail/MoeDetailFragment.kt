@@ -15,6 +15,7 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.taihen.moekot.R
 import com.taihen.moekot.databinding.FragmentMoeDetailBinding
+import com.taihen.moekot.databinding.GenreChipBinding
 import com.taihen.moekot.model.MoeDetailViewModel
 import com.taihen.moekot.model.MoeItem
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,7 +57,7 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
 
         _binding.moeDetailGenres.removeAllViews()
         _moeItem.genres.forEach { genre ->
-            val chip = Chip(requireContext())
+            val chip = GenreChipBinding.inflate(layoutInflater).root as Chip
             chip.text = genre
             chip.isClickable = false
             _binding.moeDetailGenres.addView(chip)
