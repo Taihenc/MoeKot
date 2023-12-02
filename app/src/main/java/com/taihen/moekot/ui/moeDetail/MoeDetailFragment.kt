@@ -1,5 +1,8 @@
 package com.taihen.moekot.ui.moeDetail
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -58,5 +61,45 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
             chip.isClickable = false
             _binding.moeDetailGenres.addView(chip)
         }
+
+        _binding.moeDescriptionContainer.setOnClickListener {
+            _binding.moeDetailDescription.maxLines = if (_binding.moeDetailDescription.maxLines == 3) Int.MAX_VALUE else 3
+            animateTextViewExpansion(_binding.moeDetailDescription)
+        }
     }
 }
+
+private fun animateTextViewExpansion(textView: TextView) {
+    val animationDuration = 1000L // You can adjust the duration as needed
+
+    val originalHeight = textView.height
+    textView.measure(
+        View.MeasureSpec.makeMeasureSpec(textView.width, View.MeasureSpec.EXACTLY),
+        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+    )
+    val targetHeight = textView.measuredHeight
+    val prevMaxlines = if (targetHeight < originalHeight) textView.maxLines else Int.MAX_VALUE
+
+    println("targetHeight: $targetHeight")
+    println("originalHeight: $originalHeight")
+    println("-------------------------------")
+
+    val valueAnimator = ValueAnimator.ofInt(originalHeight, targetHeight)
+    valueAnimator.duration = animationDuration
+    valueAnimator.addUpdateListener { valueAnimator ->
+        val animatedValue = valueAnimator.animatedValue as Int
+        val layoutParams = textView.layoutParams
+        layoutParams.height = animatedValue
+        textView.layoutParams = layoutParams
+        textView.maxLines = Int.MAX_VALUE
+    }
+    valueAnimator.addListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationEnd(animation: Animator) {
+            textView.maxLines = prevMaxlines
+        }
+    })
+
+    valueAnimator.start()
+}
+
+

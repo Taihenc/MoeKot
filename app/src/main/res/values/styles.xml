@@ -3,10 +3,13 @@
     <style name="Moe.Chip.Genre" parent="Widget.Material3.Chip.Suggestion.Elevated">
         <item name="chipBackgroundColor">@color/colorSecondary</item>
         <item name="chipMinHeight">20dp</item>
+        <item name="chipMinTouchTargetSize">0dp</item>
+        <item name="chipCornerRadius">10dp</item>
         <item name="android:textColor">@color/colorOnSurface</item>
         <item name="android:textAppearance">@style/TextAppearance.Material3.BodySmall</item>
         <item name="chipStrokeWidth">0dp</item>
-        <item name="android:checkable">false</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:checkable">true</item>
     </style>
 
     <style name="textAppearanceTitle" parent="TextAppearance.MaterialComponents.Headline1">

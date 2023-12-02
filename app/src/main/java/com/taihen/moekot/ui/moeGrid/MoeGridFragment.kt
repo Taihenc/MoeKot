@@ -50,7 +50,7 @@ class MoeGridFragment: Fragment(R.layout.fragment_moe_grid) {
 //        this should be temporary
         viewModel.viewModelScope.launch {
             try {
-                val moeList: List<MoeItem> = moeClient.fetchMangaItems(1, 50);
+                val moeList: List<MoeItem> = moeClient.fetchMangaItems(1, 10);
                 viewModel.updateMoeList(moeList)
             } catch (e: Exception) {
                 println(e)
