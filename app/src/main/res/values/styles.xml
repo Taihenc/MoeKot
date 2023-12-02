@@ -9,7 +9,7 @@
         <item name="android:checkable">false</item>
     </style>
 
-    <style name="textAppearanceTitle" parent="TextAppearance.MaterialComponents.Headline2">
+    <style name="textAppearanceTitle" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 

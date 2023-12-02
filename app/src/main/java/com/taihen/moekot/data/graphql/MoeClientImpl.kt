@@ -1,19 +1,15 @@
 package com.taihen.moekot.data.graphql
 
-import android.net.Uri
 import com.anilist.graphql.GetMoeDataQuery
 import com.anilist.graphql.fragment.MediaFragment
-import com.anilist.graphql.type.Media
 import com.anilist.graphql.type.MediaType
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.Optional
-import com.taihen.moekot.model.AnilistClient
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ApolloAnilistClient(
-    private val apolloClient: ApolloClient
-): AnilistClient {
+class MoeClientImpl(private val apolloClient: ApolloClient): MoeClient {
     override suspend fun getPopularMedia(type: MediaType, page: Int, perPage: Int): List<MediaFragment> {
         val res = apolloClient.query(
             GetMoeDataQuery(

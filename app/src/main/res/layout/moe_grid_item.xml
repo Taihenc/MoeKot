@@ -30,27 +30,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
             app:cardCornerRadius="12dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cover_constraint"
+            <ImageView
+                android:id="@+id/moe_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/moe_image"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:ignore="ContentDescription"
-                    tools:src="@mipmap/ic_launcher" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                android:layout_height="match_parent"
+                tools:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ContentDescription"
+                tools:src="@mipmap/ic_launcher" />
             <FrameLayout
                 android:id="@+id/play_layout"
                 android:layout_width="50dp"
@@ -89,7 +81,7 @@
             android:layout_marginEnd="6dp"
             android:layout_marginBottom="6dp"
             android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="31sp">
             <TextView
                 android:id="@+id/moe_title"
                 style="@style/textBodyPrimary"

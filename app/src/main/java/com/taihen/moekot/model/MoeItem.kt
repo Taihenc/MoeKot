@@ -3,10 +3,13 @@ package com.taihen.moekot.model
 import android.net.Uri
 
 data class MoeItem(
-    val imageUri: Uri,
+    val id: Int,
+    val coverImageUri: Uri,
+    val backdropImageUri: Uri,
     val title: String,
     val author: String,
     val description: String,
-    val genre: List<String>,
+    val genres: List<String>,
+    val type: String,
     val status: String
 )
