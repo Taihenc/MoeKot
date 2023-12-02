@@ -8,43 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.taihen.moekot.R
 import com.taihen.moekot.model.MoeItem
 import coil.load
+import coil.transform.CircleCropTransformation
+import com.taihen.moekot.databinding.MoeGridItemBinding
 
 class MoeGridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val imageView: ImageView = itemView.findViewById(R.id.moe_image)
-    private val titleTextView: TextView = itemView.findViewById(R.id.moe_title)
-    private val subTitleTextView: TextView = itemView.findViewById(R.id.moe_sub_title)
-
+    private val _binding: MoeGridItemBinding = MoeGridItemBinding.bind(itemView)
     fun bind(moeItem: MoeItem) {
-        val layoutParams = imageView.layoutParams
-        val scaleType = imageView.scaleType
-        val adjustViewBound = imageView.adjustViewBounds
-
         // Load the image with Coil
-        imageView.load(moeItem.coverImageUri) {
+        _binding.moeImage.load(moeItem.coverImageUri) {
             crossfade(true)
-//            transformations(CircleCropTransformation())
-            listener(onSuccess = { _, _ ->
-                imageView.layoutParams = layoutParams
-                imageView.scaleType = scaleType
-                imageView.adjustViewBounds = adjustViewBound
-            })
         }
-        titleTextView.text = moeItem.title
-        subTitleTextView.text = moeItem.author
-        titleTextView.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-            override fun onPreDraw(): Boolean {
-                // Remove the listener to avoid redundant calls
-                titleTextView.viewTreeObserver.removeOnPreDrawListener(this)
-
-                if (titleTextView.lineCount > 1) {
-                    subTitleTextView.visibility = View.GONE
-                } else {
-                    subTitleTextView.visibility = View.VISIBLE
-                }
-
-                return true
-            }
-        })
+        _binding.moeTitle.text = moeItem.title
+        _binding.moeSubTitle.text = moeItem.author
+        _binding.moeSubTitle.visibility = if (_binding.moeTitle.lineCount > 1) View.GONE else View.VISIBLE
     }
     fun setItemHeight(height: Int) {
         val layoutParams = itemView.layoutParams
