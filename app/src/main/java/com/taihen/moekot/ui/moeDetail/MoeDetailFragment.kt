@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
@@ -30,6 +31,8 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
 
     private lateinit var _moeItem: MoeItem
 
+    private lateinit var _moeRecyclerView: RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -41,8 +44,12 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _moeRecyclerView = _binding.moeDetailCharactersRecyclerView
+        val adapter = MoeCharacterAdapter(emptyList())
+        _moeRecyclerView.adapter = adapter
         selectedMoeItem.moeItem.observe(viewLifecycleOwner) {
             _moeItem = it
+            adapter.updateData(it.characters)
             updateUI()
         }
     }
@@ -80,10 +87,6 @@ private fun animateTextViewExpansion(textView: TextView) {
     )
     val targetHeight = textView.measuredHeight
     val prevMaxlines = if (targetHeight < originalHeight) textView.maxLines else Int.MAX_VALUE
-
-    println("targetHeight: $targetHeight")
-    println("originalHeight: $originalHeight")
-    println("-------------------------------")
 
     val valueAnimator = ValueAnimator.ofInt(originalHeight, targetHeight)
     valueAnimator.duration = animationDuration

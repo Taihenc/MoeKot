@@ -176,4 +176,29 @@
             tools:layout_width="wrap_content"
             tools:text="Romance" />
     </com.google.android.material.chip.ChipGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="17dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/moe_detail_genres">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textAppearanceTitle"
+            android:textSize="17sp"
+            android:text="Characters List"
+            tools:ignore="HardcodedText" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/moe_detail_characters_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:itemCount="10"
+            tools:listitem="@layout/moe_character_item" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

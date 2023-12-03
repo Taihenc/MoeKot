@@ -30,4 +30,16 @@ fragment MediaFragment on Media {
             primaryOccupations
         }
     }
+    characters {
+        nodes {
+            id
+            name {
+                userPreferred
+            }
+            image {
+                large
+                medium
+            }
+        }
+    }
 }

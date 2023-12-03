@@ -5,6 +5,7 @@ import android.text.Html
 import androidx.compose.ui.text.toLowerCase
 import androidx.core.text.HtmlCompat
 import com.anilist.graphql.fragment.MediaFragment
+import com.taihen.moekot.model.MoeCharacter
 import com.taihen.moekot.model.MoeItem
 import java.util.Locale
 
@@ -19,10 +20,23 @@ fun MediaFragment.toMoeItem(): MoeItem {
         description = Html.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT).toString() ?: "",
         genres = genres?.map { it ?: "" } ?: emptyList(),
         type = this.type.toString().toFormatted(),
-        status = status?.name ?: ""
+        status = status?.name ?: "",
+        characters = characters?.toMoeCharacters() ?: emptyList()
     )
 }
 
 fun String.toFormatted(): String {
     return this[0].uppercaseChar() + this.substring(1).lowercase()
+}
+
+fun MediaFragment.Characters.toMoeCharacters(): List<MoeCharacter> {
+    val list = nodes?.map {
+        MoeCharacter(
+            id = it!!.id,
+            mediumImageUri = it.image?.medium ?: "",
+            largeImageUri = it.image?.large ?: "",
+            name = it.name?.userPreferred ?: ""
+        )
+    } ?: emptyList()
+    return list
 }
