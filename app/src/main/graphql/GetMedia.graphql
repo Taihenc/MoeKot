@@ -30,7 +30,7 @@ fragment MediaFragment on Media {
             primaryOccupations
         }
     }
-    characters {
+    characters(sort: [ROLE, RELEVANCE, ID]) {
         nodes {
             id
             name {
