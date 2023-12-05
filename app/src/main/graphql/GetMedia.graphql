@@ -1,6 +1,6 @@
-query GetMoeData($type: MediaType, $page: Int, $perPage: Int, $staff_sort: [StaffSort]) {
-    trending: Page(page: $page, perPage: $perPage) {
-        media(sort: TRENDING_DESC, type: $type, isAdult: false) {
+query GetMoeData($type: MediaType, $page: Int, $perPage: Int) {
+    Page(page: $page, perPage: $perPage) {
+        media(sort: POPULARITY_DESC, type: $type, isAdult: false) {
             ...MediaFragment
         }
     }
@@ -22,10 +22,14 @@ fragment MediaFragment on Media {
     status(version: 2)
     genres
     averageScore
-    staff(sort: $staff_sort) {
+    staff(sort: [RELEVANCE, ID]) {
         nodes {
+            id
             name {
                 userPreferred
+            }
+            image {
+                medium
             }
             primaryOccupations
         }

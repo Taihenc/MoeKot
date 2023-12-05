@@ -116,6 +116,7 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
             android:text="@string/moe_detail_description_title"
             android:textSize="17sp"
             tools:text="Description" />
@@ -212,10 +213,28 @@
             style="@style/textAppearanceTitle"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="Characters List"
+            android:text="Characters"
             tools:ignore="HardcodedText" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/moe_detail_characters_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:itemCount="10"
+            tools:listitem="@layout/moe_character_item" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/textAppearanceTitle"
+            android:layout_marginTop="10dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="Staffs"
+            tools:ignore="HardcodedText" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/moe_detail_staff_recycler_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

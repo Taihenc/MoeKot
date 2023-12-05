@@ -18,6 +18,6 @@ class MoeClientImpl @Inject constructor(private val apolloClient: ApolloClient):
                 Optional.present(perPage)
             )
         ).execute()
-        return res.data?.trending?.media?.mapNotNull { it?.mediaFragment } ?: emptyList()
+        return res.data?.Page?.media?.mapNotNull { it?.mediaFragment } ?: emptyList()
     }
 }

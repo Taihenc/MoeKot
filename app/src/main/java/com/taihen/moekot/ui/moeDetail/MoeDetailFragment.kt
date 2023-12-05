@@ -7,14 +7,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import coil.dispose
 import coil.load
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import com.taihen.moekot.R
 import com.taihen.moekot.databinding.FragmentMoeDetailBinding
 import com.taihen.moekot.databinding.GenreChipBinding
@@ -43,11 +40,14 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = MoeCharacterAdapter(emptyList())
-        _binding.moeDetailCharactersRecyclerView.adapter = adapter
+        val character_adapter = MoeCharacterAdapter(emptyList())
+        val staff_adapter = MoeStaffAdapter(emptyList())
+        _binding.moeDetailCharactersRecyclerView.adapter = character_adapter
+        _binding.moeDetailStaffRecyclerView.adapter = staff_adapter
         selectedMoeItem.moeItem.observe(viewLifecycleOwner) {
             _moeItem = it
-            adapter.updateData(it.characters)
+            character_adapter.submitList(it.characters)
+            staff_adapter.submitList(it.staffs)
             updateUI()
         }
     }

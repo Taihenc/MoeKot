@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.taihen.moekot.databinding.MoeCharacterItemBinding
 import com.taihen.moekot.model.MoeCharacter
-import com.taihen.moekot.model.MoeDetailViewModel
-import javax.inject.Inject
 
 class MoeCharacterAdapter(private var moeCharacters: List<MoeCharacter>): ListAdapter<MoeCharacter, MoeCharacterViewHolder>(MoeCharacterDiffCallback())
 {
@@ -17,12 +15,7 @@ class MoeCharacterAdapter(private var moeCharacters: List<MoeCharacter>): ListAd
     }
 
     override fun onBindViewHolder(holder: MoeCharacterViewHolder, position: Int) {
-        holder.bind(moeCharacters[position])
-    }
-    override fun getItemCount(): Int = currentList.size
-    fun updateData(newMoeCharacterList: List<MoeCharacter>) {
-        moeCharacters = newMoeCharacterList
-        submitList(newMoeCharacterList)
+        holder.bind(getItem(position))
     }
 }
 

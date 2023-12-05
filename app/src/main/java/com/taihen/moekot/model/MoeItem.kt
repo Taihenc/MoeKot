@@ -12,5 +12,6 @@ data class MoeItem(
     val genres: List<String>,
     val type: String,
     val status: String,
-    val characters: List<MoeCharacter>
+    val characters: List<MoeCharacter>,
+    val staffs: List<MoeStaff>
 )
