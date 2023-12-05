@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import coil.dispose
 import coil.load
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
@@ -54,6 +55,8 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
         }
     }
     private fun updateUI() {
+        _binding.moeBackdrop.dispose()
+        _binding.moeCardCover.dispose()
         _binding.moeBackdrop.load(_moeItem.backdropImageUri)
         _binding.moeCardCover.load(_moeItem.coverImageUri)
         _binding.moeDetailTitle.text = _moeItem.title
