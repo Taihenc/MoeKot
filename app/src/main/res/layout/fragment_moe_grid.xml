@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:background="?android:attr/colorBackground">
     <androidx.cardview.widget.CardView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/moe_avatar_card"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="30dp"
         app:cardCornerRadius="12dp"
@@ -42,7 +43,7 @@
         android:id="@+id/main_content_tvHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_content_header_string"
+        android:text="Browse"
         style="@style/textAppearanceTitle"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +52,8 @@
         app:layout_constraintBottom_toTopOf="@+id/moe_grid_search_bar"
         android:textSize="20sp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="0dp" />
+        android:layout_marginBottom="0dp"
+        tools:ignore="HardcodedText"/>
 
     <com.google.android.material.search.SearchBar
         android:id="@+id/moe_grid_search_bar"

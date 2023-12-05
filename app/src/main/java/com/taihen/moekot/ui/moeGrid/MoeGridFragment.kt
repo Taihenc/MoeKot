@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.taihen.moekot.R
 import com.taihen.moekot.data.graphql.MoeClient
+import com.taihen.moekot.databinding.FragmentMoeGridBinding
 import com.taihen.moekot.model.MoeItem
 import com.taihen.moekot.model.MoeListViewModel
 import com.taihen.moekot.model.MoeDetailViewModel
@@ -29,6 +31,7 @@ import javax.inject.Inject
 class MoeGridFragment: Fragment(R.layout.fragment_moe_grid) {
     private val viewModel: MoeListViewModel by viewModels()
     private lateinit var recyclerView: RecyclerView
+    private lateinit var _binding: FragmentMoeGridBinding
 
     @Inject
     lateinit var selectedMoeItem: MoeDetailViewModel
@@ -37,13 +40,14 @@ class MoeGridFragment: Fragment(R.layout.fragment_moe_grid) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_moe_grid, container, false)
+    ): View {
+        _binding = FragmentMoeGridBinding.inflate(inflater, container, false)
+        return _binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.moe_grid_recycler_view)
+        recyclerView = _binding.moeGridRecyclerView
         val adapter = MoeAdapter(selectedMoeItem)
         recyclerView.adapter = adapter
 
@@ -65,6 +69,20 @@ class MoeGridFragment: Fragment(R.layout.fragment_moe_grid) {
 
 //        this should be temporary
         viewModel.fetchMoreMoeItems(1, 12)
+
+        fun showNotImplementedToast() {
+            Toast.makeText(requireContext(), "Not Implemented Yet🥺", Toast.LENGTH_SHORT).show()
+        }
+
+        _binding.moeAvatar.setOnClickListener {
+            showNotImplementedToast()
+        }
+        _binding.moeSortIco.setOnClickListener {
+            showNotImplementedToast()
+        }
+        _binding.moeSettingIco.setOnClickListener {
+            showNotImplementedToast()
+        }
     }
 
     class MoeGridScrollListener(viewModel: MoeListViewModel, layoutManager: RecyclerView.LayoutManager?) : RecyclerView.OnScrollListener() {
