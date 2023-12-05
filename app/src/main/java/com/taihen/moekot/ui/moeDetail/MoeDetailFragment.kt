@@ -32,8 +32,6 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
 
     private lateinit var _moeItem: MoeItem
 
-    private lateinit var _moeRecyclerView: RecyclerView
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,9 +43,8 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _moeRecyclerView = _binding.moeDetailCharactersRecyclerView
         val adapter = MoeCharacterAdapter(emptyList())
-        _moeRecyclerView.adapter = adapter
+        _binding.moeDetailCharactersRecyclerView.adapter = adapter
         selectedMoeItem.moeItem.observe(viewLifecycleOwner) {
             _moeItem = it
             adapter.updateData(it.characters)
@@ -74,6 +71,7 @@ class MoeDetailFragment(): Fragment(R.layout.fragment_moe_detail) {
         }
 
         _binding.moeDescriptionContainer.setOnClickListener {
+            _binding.moeDetailDescriptionGradient.visibility = if (_binding.moeDetailDescriptionGradient.visibility == View.VISIBLE) View.GONE else View.VISIBLE
             _binding.moeDetailDescription.maxLines = if (_binding.moeDetailDescription.maxLines == 3) Int.MAX_VALUE else 3
             animateTextViewExpansion(_binding.moeDetailDescription)
         }
