@@ -29,8 +29,10 @@ MoeKot is your go-to app for exploring, discovering, and curating your favorite 
 
 ### Contribute
 
-1. Clone this repo
+1. Fork this repo.
 2. Open this repo in Android Studio: [Download and Install](https://developer.android.com/studio)
+3. Create a new branch.
+4. Make change and submit a pull request from your branch
 
 ## Acknowledgments
 
