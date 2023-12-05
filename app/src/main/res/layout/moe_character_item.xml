@@ -6,7 +6,7 @@
     android:layout_width="100dp"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
-    tools:background="@color/background" >
+    tools:background="?android:attr/colorBackground" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
@@ -57,7 +57,6 @@
             <TextView
                 android:id="@+id/moe_character_name"
                 style="@style/textBodyPrimary"
-                android:textColor="@color/textColorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"

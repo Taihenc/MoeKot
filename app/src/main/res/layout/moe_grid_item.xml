@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
-    tools:background="@color/background"
+    tools:background="?android:attr/colorBackground"
     tools:layout_width="150dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -85,7 +85,6 @@
             <TextView
                 android:id="@+id/moe_title"
                 style="@style/textBodyPrimary"
-                android:textColor="@color/textColorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -102,6 +101,7 @@
                 android:layout_marginTop="-1dp"
                 android:ellipsize="end"
                 android:singleLine="true"
+                android:alpha="0.6"
                 tools:text="Sample artist" />
         </LinearLayout>
 

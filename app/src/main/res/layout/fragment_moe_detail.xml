@@ -5,7 +5,7 @@
     android:id="@+id/moe_detail_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="?android:attr/colorBackground">
 
     <FrameLayout
         android:id="@+id/moe_backdrop_container"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_shape"
-            android:backgroundTint="@color/background" />
+            android:backgroundTint="?android:attr/colorBackground" />
     </FrameLayout>
 
     <FrameLayout
@@ -86,6 +86,7 @@
             android:layout_marginBottom="17dp"
             android:text="@string/moe_detail_title"
             android:textSize="14sp"
+            android:alpha="0.6"
             tools:text="Author" />
 
         <TextView
