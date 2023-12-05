@@ -25,7 +25,7 @@ MoeKot is your go-to app for exploring, discovering, and curating your favorite 
 
 ### Installation
 
-- Download APK file from the [release page]()
+- Download APK file from the [release page](https://github.com/Taihenc/MoeKot/releases/tag/v0.1.0-beta.1)
 
 ### Contribute
 
