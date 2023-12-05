@@ -60,11 +60,9 @@ class MoeGridFragment: Fragment(R.layout.fragment_moe_grid) {
             }
         }
 
+        val moeScrollListener = MoeGridScrollListener(viewModel, recyclerView.layoutManager as GridLayoutManager?)
         recyclerView.addOnScrollListener(
-            MoeGridScrollListener(
-                viewModel,
-                recyclerView.layoutManager as GridLayoutManager?
-            )
+            moeScrollListener
         )
 
 //        this should be temporary
@@ -99,6 +97,7 @@ class MoeGridFragment: Fragment(R.layout.fragment_moe_grid) {
             if (!_viewModel.loading.value && (visibleItemCount + firstVisibleItem) >= totalItemCount) {
                 // Load more items
                 _currentPage++
+                println("load more items: $_currentPage")
                 _viewModel.fetchMoreMoeItems(_currentPage, 12)
             }
         }

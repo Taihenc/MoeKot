@@ -23,8 +23,8 @@ class MoeListViewModel @Inject constructor(
 
     private val _loading = MutableStateFlow(false)
     val loading: StateFlow<Boolean> get() = _loading
-    private fun updateMoeList(newList: List<MoeItem>) {
-        _moeItemList.value = newList.let { ArrayList(it) }
+    private fun updateMoeList(moeList: List<MoeItem>) {
+        _moeItemList.value = moeList.let { ArrayList(it) }
     }
     fun fetchMoreMoeItems(page: Int, pageSize: Int) {
         viewModelScope.launch {
