@@ -13,6 +13,20 @@
         <item name="android:checkable">true</item>
     </style>
 
+    <style name="MoeSearchBar" parent="ShapeAppearanceOverlay.Material3.SearchBar">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.Material3.SearchBar</item>
+        <item name="android:background">?attr/colorSecondaryContainer</item>
+        <item name="hintEnabled">true</item>
+        <item name="android:hint">What are you looking for?</item>
+        <item name="android:textColorHint">?attr/colorSecondary</item>
+        <item name="endIconMinSize">10dp</item>
+        <item name="startIconContentDescription">search</item>
+        <item name="endIconMode">custom</item>
+        <item name="endIconDrawable">@drawable/round_search_24</item>
+        <item name="startIconDrawable">@drawable/round_sort_24</item>
+    </style>
+
+
     <style name="textAppearanceTitle" parent="TextAppearance.Material3.TitleLarge">
 <!--        <item name="android:textColor">@color/textColorPrimary</item>-->
     </style>
