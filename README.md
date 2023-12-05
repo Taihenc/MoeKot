@@ -1,37 +1,14 @@
-<h1 class="readme-header">
-    <span>
-        <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" style="height: 100%"/> 
+<h1 style="position: relative; height: 1.5em; line-height: 1.5;" class="readme-header">
+    <span style="position: relative; max-height: 100%;">
+        <img src="./app/src/main/res/mipmap-hdpi/ic_launcher.webp" style="height: 100%; max-height: 100%; width: auto; vertical-align: top;"/> 
     </span>
     MoeKot (Moe + Kotlin)
 </h1>
 
-<style>
-    .readme-header {
-      position: relative;
-      height: 1.5em;
-      line-height: 1.5;
-    }
-
-    .readme-header span {
-        height:10px;
-    }
-
-    .readme-header img {
-      height: 100%;
-      max-height: 100%;
-      width: auto;
-      vertical-align: top;
-    }
-
-    .img-preview {
-        display: flex;
-        gap: 5px
-    }
-  </style>
-<div class="img-preview">
-    <img src="./readme/browse.png" width=200>
-    <img src="./readme/chainsaw1.png" width=200>
-    <img src="./readme/chainsaw2.png" width=200>
+<div style="display: flex; gap: 5px;" class="img-preview">
+    <img src="./readme/browse.png" width="200">
+    <img src="./readme/chainsaw1.png" width="200">
+    <img src="./readme/chainsaw2.png" width="200">
 </div>
 
 ## Description
