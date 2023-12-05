@@ -9,7 +9,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MoeClientImpl(private val apolloClient: ApolloClient): MoeClient {
+class MoeClientImpl @Inject constructor(private val apolloClient: ApolloClient): MoeClient {
     override suspend fun getPopularMedia(type: MediaType, page: Int, perPage: Int): List<MediaFragment> {
         val res = apolloClient.query(
             GetMoeDataQuery(

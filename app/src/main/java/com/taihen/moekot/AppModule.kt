@@ -42,9 +42,9 @@ object AppModule {
         return MoeDetailViewModel()
     }
 
-    @Provides
-    @Singleton
-    fun provideMoeListViewModel(): MoeListViewModel {
-        return MoeListViewModel()
-    }
+//    @Provides
+//    @Singleton
+//    fun provideMoeListViewModel(moeClient: MoeClient): MoeListViewModel {
+//        return MoeListViewModel(moeClient)
+//    }
 }
